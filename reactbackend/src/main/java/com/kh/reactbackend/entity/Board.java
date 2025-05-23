@@ -35,7 +35,7 @@ public class Board {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "BOARD_WRITER", nullable = false)
-    private Member boardWriter;
+    private Member member;
 
 
 }

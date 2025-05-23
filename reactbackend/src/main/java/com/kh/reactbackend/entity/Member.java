@@ -45,13 +45,21 @@ public class Member {
 
     private Integer age;
 
+    @Column(name = "FAVORITE")
+    private String favorite;
 
-    public void updateMemberInfo(String userName, String email, String phone, String address, Integer age) {
+    public void updateMemberInfo(String userName, String email, String phone, Integer age, String favorite) {
         this.userName = userName;
         this.email = email;
         this.phone = phone;
         this.age = age;
+        this.favorite = favorite;
     }
+
+    public void setStatus(CommonEnums.Status status) {
+        this.status = status;
+    }
+
 
     @PrePersist
     public void prePersist() {
@@ -66,5 +74,7 @@ public class Member {
     public void preUpdate() {
         this.modifyDate = LocalDateTime.now();
     }
+
+
 }
 

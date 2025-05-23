@@ -1,9 +1,26 @@
 package com.kh.reactbackend.dto;
 
 import com.kh.reactbackend.entity.Member;
+import com.kh.reactbackend.enums.CommonEnums;
 import lombok.*;
 
 public class MemberDto {
+
+    @Getter
+    @NoArgsConstructor
+    @AllArgsConstructor
+    public static class Login {
+        private String userId;
+        private String userPwd;
+    }
+
+    @Getter
+    @NoArgsConstructor
+    @AllArgsConstructor
+    public static class Delete {
+        private String userId;
+        private String userPwd;
+    }
 
     @Getter
     @Setter
@@ -17,6 +34,7 @@ public class MemberDto {
         private String email;
         private String phone;
         private Integer age;
+        private String favorite;
 
         public Member toEntity() {
             return Member.builder()
@@ -26,6 +44,7 @@ public class MemberDto {
                     .email(this.email)
                     .phone(this.phone)
                     .age(this.age)
+                    .favorite(this.favorite)
                     .build();
         }
     }
@@ -41,6 +60,7 @@ public class MemberDto {
         private String email;
         private String phone;
         private Integer age;
+        private String favorite;
     }
 
     @Getter
@@ -56,6 +76,7 @@ public class MemberDto {
         private String email;
         private String phone;
         private Integer age;
+        private String favorite;
 
         public static Response toDto(Member member) {
             return Response.builder()
@@ -65,6 +86,7 @@ public class MemberDto {
                     .email(member.getEmail())
                     .phone(member.getPhone())
                     .age(member.getAge())
+                    .favorite(member.getFavorite())
                     .build();
         }
     }
