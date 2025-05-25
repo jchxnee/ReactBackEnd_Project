@@ -23,6 +23,7 @@ public class MemberController {
 
     @PostMapping("/login")
     public ResponseEntity<MemberDto.Response> login(@RequestBody MemberDto.Login loginDto) {
+
         return ResponseEntity.ok(
                 memberservice.loginMember(loginDto.getUserId(), loginDto.getUserPwd())
         );

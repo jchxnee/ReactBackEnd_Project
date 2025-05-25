@@ -10,6 +10,7 @@ import org.w3c.dom.Text;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
 @Builder
+@Setter
 public class Board {
 
 
